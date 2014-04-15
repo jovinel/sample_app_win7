@@ -17,10 +17,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: sample_app_win7_development
+  database: mydb
   pool: 5
-  username: sample_app_win7
-  password:
+  username: postgres
+  password: postgres
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -46,15 +46,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: sample_app_win7_test
+  database: mydb
   pool: 5
-  username: sample_app_win7
-  password:
+  username: postgres
+  password: postgres
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: sample_app_win7_production
+  database: mydb
   pool: 5
-  username: sample_app_win7
-  password:
+  username: postgres
+  password: postgres
