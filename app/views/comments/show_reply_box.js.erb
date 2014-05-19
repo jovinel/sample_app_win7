@@ -1,0 +1,7 @@
+if ($("#comment-box-<%= escape_javascript(params[:id]) %>").parent().length) { 
+ 	$("#comment-box-block-<%= escape_javascript(params[:id]) %>").empty();
+ }
+else { 
+
+	$("#comment-box-block-<%= escape_javascript(params[:id]) %>").append("<%= escape_javascript(render('comment_box')) %>");
+ }

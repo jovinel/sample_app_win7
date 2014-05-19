@@ -1,0 +1,5 @@
+$("#comment-content-<%= @comment_parent %> .comments #comment-<%= escape_javascript(@comment_destroyed) %>").remove();
+if ($('#comment-content-<%= @comment_parent %> .comments li').length == 0) {
+	$("#comment-content-<%= @comment_parent %>").remove();
+	$("#comment-view-<%= @comment_parent %>").remove();
+}

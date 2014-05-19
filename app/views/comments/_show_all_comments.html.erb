@@ -1,0 +1,23 @@
+<span id="comment-content-<%= f %>" class="comment-content">
+	<ol class="comments">
+		<% c.each do |comm| %>
+			<li id="comment-<%= comm.id %>">
+					<%= gravatar_for(User.find(comm.user_id), size: 25) %> 
+					<span class="timestamp">
+						Commented <%= time_ago_in_words(comm.created_at) %> ago.
+					</span></br>
+
+					<div class="comment-text">
+						<%= comm.comment %></br>
+						<% if current_user?(User.find(comm.user_id)) %>
+							<%= link_to "Delete", comm, method: :delete, data: { confirm: "You sure?" }, title: comm.comment, remote: true %>
+
+						<% end %>
+					</div>
+					
+
+			</li>
+		<% end %>
+	</ol>
+</span>
+

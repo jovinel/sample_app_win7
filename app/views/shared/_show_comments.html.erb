@@ -1,0 +1,12 @@
+<% if @comment_list.any? %>
+	<ol class="comments">
+		<% @comment_list.each do |c| %>
+			<li>
+				<%= c.comment %></br>
+				<span class="timestamp">
+					Commented <%= time_ago_in_words(c.created_at) %> ago.
+				</span>
+			</li>
+		<% end %>
+	</ol>
+<% end %>

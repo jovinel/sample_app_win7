@@ -1,0 +1,9 @@
+if ($("#comment-content-<%= escape_javascript(params[:id]) %>").parent().length) { 
+ 	$("#all-comments-block-<%= escape_javascript(params[:id]) %>:last-child").empty();
+ }
+else { 
+	$("#all-comments-block-<%= escape_javascript(params[:id]) %>:last-child").append("<%= escape_javascript(render(:partial => 'show_all_comments', :locals => {:c => @comments, :f => @comment_parent})) %>");
+ }
+
+
+

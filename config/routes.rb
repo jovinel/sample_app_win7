@@ -5,13 +5,21 @@ SampleAppWin7::Application.routes.draw do
       get :following, :followers
     end
   end
+
+  resources :comments do
+    member do
+      get :show_reply_box, :show_comments
+    end
+  end
   
   resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  # resources :comments,      only: [:create, :destroy]
+  resources :post_replies,  only: [:create, :destroy]
 
   root 'static_pages#home'
-
+  # match '/',              to: 'static_pages#home',      :constraints => { :subdomain => /.+/ }  
   #match '/profile',       to: 'users#show',             via: 'get'
   match '/signup',        to: 'users#new',              via: 'get'
   match '/signin',        to: 'sessions#new',           via: 'get'
@@ -19,7 +27,8 @@ SampleAppWin7::Application.routes.draw do
   match '/help',          to: 'static_pages#help',      via: 'get'
   match '/about',         to: 'static_pages#about',     via: 'get'
   match '/contact',       to: 'static_pages#contact',   via: 'get'
-
+  match '/show_reply_box', to: 'comments#show_reply_box', via: 'get'
+  match '/show_comments', to: 'comments#show_comments', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

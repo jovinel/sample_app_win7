@@ -205,6 +205,7 @@ input {
 
 .content {
 	display: block;
+	overflow: hidden;
 }
 .timestamp {
 	color: $grayLight;
@@ -250,4 +251,28 @@ aside {
 		margin: 1px 1px;
 	}
 }
+.feed-right {
+	padding-left: 60px;
+}
+.comment-box textarea {
+	margin: 10px 0 10px 0;
+}
 
+.comments {
+	list-style: none;
+	margin: 10px 0 0 0;
+
+	li {
+		padding: 10px 0;
+		border-top: 1px solid #e8e8e8;
+	}
+}
+.comment-text {
+	/*overflow: hidden;
+	display: block;*/
+	padding-left: 35px;
+	overflow-wrap: break-word;
+}
+.comment-block {
+	padding-right: 15px;
+}
